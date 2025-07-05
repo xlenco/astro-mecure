@@ -1,0 +1,9 @@
+{
+    "redirects": [
+        {
+            "source": "/:year(2022|2023|2024|2025)/(.*)",
+            "destination": "/posts/$2",
+            "permanent": true
+        }
+    ]
+}
