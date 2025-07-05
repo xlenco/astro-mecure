@@ -3,12 +3,12 @@ import { getYear } from 'date-fns';
 import { url } from '@/utils/url';
 
 const config: Config = {
-  title: '银河渡舟',
-  description: '浊以静之徐清，安以动之徐生。',
+  title: '希乐博客',
+  description: 'Xlenco的个人博客，分享技术与生活。“生命不息，折腾不止。',
   author: 'Wider',
-  favicon: url('favicon.ico'),
+  favicon: 'https://weavatar.com/avatar/67254b346498965226e5c91ebff66a69570b97f224d2d061e504b4eade1f00fa',
   navbar: {
-    logo: import('@/custom/NavLogo.astro'),
+    logo: undefined,
     menu: [
       {
         label: '首页',
@@ -61,7 +61,7 @@ const config: Config = {
     hasSearchToggle: true,
     hasThemeToggle: true,
   },
-  hero: {
+  false: {
     background: import('src/assets/hero-bg.jpg'),
     description: '欢迎来到银河渡舟的记事簿，看看最近我在折腾啥吧。',
     title: import('@/custom/HeroLogo.astro'),
@@ -70,40 +70,40 @@ const config: Config = {
     widgets: [
       {
         name: 'profile',
-        author: '银河渡舟',
-        description: '浊以静之徐清，安以动之徐生',
-        avatar: import('src/assets/avatar.png'),
+        author: 'Xlenco',
+        description: '总有人间一两风，吹我十万八千梦',
+        avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1043865083&s=160',
         background: import('src/assets/profile-bg.jpg'),
         socialIcons: [
           {
             label: 'github',
             color: '#7c8690',
             icon: 'tabler:brand-github',
-            url: 'https://github.com/izmttk'
+            url: 'https://github.com/xlenco'
           },
-          {
-            label: 'bilibili',
-            color: '#fc87b2',
-            icon: 'tabler:brand-bilibili',
-            url: 'https://space.bilibili.com/293591084'
-          },
-          {
-            label: 'netease music',
-            color: '#ff4e6a',
-            icon: 'tabler:brand-netease-music',
-            url: 'https://music.163.com/user/390631653'
-          },
-          {
-            label: 'twitter',
-            color: '#1d9bf0',
-            icon: 'tabler:brand-twitter',
-            url: 'https://twitter.com/vviderx'
-          },
+          // {
+          //   label: 'bilibili',
+          //   color: '#fc87b2',
+          //   icon: 'tabler:brand-bilibili',
+          //   url: 'https://space.bilibili.com/293591084'
+          // },
+          // {
+          //   label: 'netease music',
+          //   color: '#ff4e6a',
+          //   icon: 'tabler:brand-netease-music',
+          //   url: 'https://music.163.com/user/390631653'
+          // },
+          // {
+          //   label: 'twitter',
+          //   color: '#1d9bf0',
+          //   icon: 'tabler:brand-twitter',
+          //   url: 'https://twitter.com/vviderx'
+          // },
           {
             label: 'mail',
             color: '#7562c7',
             icon: 'tabler:mail',
-            url: 'mailto:widergao@gmail.com'
+            url: 'mailto:xlenco@hotmail.com'
           }
         ],
       },
@@ -119,10 +119,10 @@ const config: Config = {
         order: 'desc',
         expandDepth: 2,
       },
-      {
-        name: 'component',
-        component: import('@/components/custom/Recommend.astro'),
-      },
+      // {
+      // name: 'component',
+      //component: import('@/components/custom/Recommend.astro'),
+      // },
     ]
   },
   pagination: {
@@ -143,44 +143,44 @@ const config: Config = {
     }
   },
   comment: {
-    provider: 'giscus',
-    options: {
-      repo: 'izmttk/izmttk.github.io',
-      repoId: 'R_kgDOJIxtIQ',
-      category: 'General',
-      categoryId: 'DIC_kwDOJIxtIc4CU1cl',
-      mapping: 'pathname',
-      reactionsEnabled: '1',
-      emitMetadata: '0',
-      inputPosition: 'top',
-      lang: 'zh-CN',
-    },
-    // provider: 'waline',
+    // provider: 'giscus',
     // options: {
-    //   serverURL: 'https://waline-vercel.wider.ink/',
-    //   meta: ['nick', 'mail', 'link'],
-    //   requiredMeta: ['nick', 'mail'],
-    //   wordLimit: 200,
-    //   commentSorting: 'latest',
-    //   login: 'disable',
-    //   search: false,
-    //   copyright: false,
-    //   reaction: false,
-    //   emoji: [
-    //     '//unpkg.com/@waline/emojis@1.1.0/weibo',
-    //     '//unpkg.com/@waline/emojis@1.1.0/bilibili',
-    //     // '//cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Coolapk/',
-    //   ],
-    // }
+    // repo: 'izmttk/izmttk.github.io',
+    // repoId: 'R_kgDOJIxtIQ',
+    // category: 'General',
+    // categoryId: 'DIC_kwDOJIxtIc4CU1cl',
+    // mapping: 'pathname',
+    // reactionsEnabled: '1',
+    // emitMetadata: '0',
+    // inputPosition: 'top',
+    // lang: 'zh-CN',
+    // },
+    provider: 'waline',
+    options: {
+      serverURL: 'https://waline.xlenco.top/',
+      meta: ['nick', 'mail', 'link'],
+      requiredMeta: ['nick', 'mail'],
+      wordLimit: 200,
+      commentSorting: 'latest',
+      login: 'disable',
+      search: false,
+      copyright: false,
+      reaction: false,
+      emoji: [
+        '//unpkg.com/@waline/emojis@1.1.0/weibo',
+        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+        // '//cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/Coolapk/',
+      ],
+    }
   },
   footer: {
     links: [
-      { label: '更新日志', url: url('changelog')},
-      { label: '引用声明', url: url('reference')},
-      { label: '关于', url: url('about')},
-      { label: '归档', url: url('archive')},
-      { label: '友情链接', url: url('friends')},
-      { label: 'Github', url: 'https://github.com/izmttk'},
+      { label: '更新日志', url: url('changelog') },
+      { label: '引用声明', url: url('reference') },
+      { label: '关于', url: url('about') },
+      { label: '归档', url: url('archive') },
+      { label: '友情链接', url: url('friends') },
+      { label: 'Github', url: 'https://github.com/izmttk' },
     ],
     declarations: [
       `Copyright © ${getYear(new Date())} 银河渡舟 All Rights Reserved.`,
