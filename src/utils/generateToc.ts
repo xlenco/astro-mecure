@@ -3,11 +3,17 @@
 import type { MarkdownHeading } from 'astro'
 
 function diveChildren(item: TocItem, depth: number): TocItem[] {
+  if (!item?.children || !Array.isArray(item.children)) {
+    return [];
+  }
+  
   if (depth === 1) {
     return item.children;
   } else {
     // e.g., 2
-    return diveChildren(item.children[item.children.length - 1], depth - 1);
+    const lastChild = item.children[item.children.length - 1];
+    if (!lastChild) return [];
+    return diveChildren(lastChild, depth - 1);
   }
 }
 

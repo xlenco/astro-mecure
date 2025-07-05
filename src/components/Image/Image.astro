@@ -30,10 +30,36 @@ function isESMImportedImage(src: any): src is ImageMetadata |  Promise<{default:
   return typeof src === "object";
 }
 
-const image = await getImage({
-  src,
-  ...rest,
-})
+let image;
+const MAX_RETRIES = 2;
+let retryCount = 0;
+let lastError;
+
+while (retryCount <= MAX_RETRIES) {
+  try {
+    image = await getImage({
+      src,
+      ...rest,
+    });
+    break;
+  } catch (error) {
+    lastError = error;
+    retryCount++;
+    if (retryCount > MAX_RETRIES) {
+      console.warn(`Failed to fetch image after ${MAX_RETRIES} attempts:`, error);
+      // Fallback to original src if getImage fails
+      image = {
+        src: typeof src === 'string' ? src : '',
+        attributes: {},
+        options: {},
+        srcSet: { values: [], attribute: '' }
+      };
+      break;
+    }
+    // Wait a bit before retrying
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  }
+}
 
 const additionalAttributes: HTMLAttributes<'img'> = {};
 if (image.srcSet.values.length > 0) {

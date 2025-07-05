@@ -180,18 +180,18 @@ const config: Config = {
       { label: '关于', url: url('about') },
       { label: '归档', url: url('archive') },
       { label: '友情链接', url: url('friends') },
-      { label: 'Github', url: 'https://github.com/izmttk' },
+      { label: 'Github', url: 'https://github.com/xlenco' },
     ],
     declarations: [
-      `Copyright © ${getYear(new Date())} 银河渡舟 All Rights Reserved.`,
+      `Copyright © ${getYear(new Date())} Xlenco All Rights Reserved.`,
     ],
     generator: true,
     rss: true,
     sitemap: true,
   },
   algolia: {
-    appId: "1IIXBX6FGH",
-    apiKey: "91aa4234096f4963e33d53262340b1ec",
+    appId: "9NDPPFQ1TN",
+    apiKey: "262a19dfd90537ce11b30c1f06ba50a7",
     indexName: "wider",
   }
 }
