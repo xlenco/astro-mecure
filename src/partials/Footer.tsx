@@ -23,7 +23,7 @@ export interface FooterConfig {
   sitemap?: boolean;
 }
 
-export interface FooterProp extends React.PropsWithChildren<React.ComponentPropsWithoutRef<'div'>>{
+export interface FooterProp extends React.PropsWithChildren<React.ComponentPropsWithoutRef<'div'>> {
   config: FooterConfig;
   containerClassName?: string;
 }
@@ -67,7 +67,7 @@ export default function Footer({
         <div className='flex flex-wrap gap-x-3'>
           {generator && <span>Powered By <a href='https://astro.build/' target='_blank'><AstroLogo className='inline' />Astro</a> · Designed By 银河渡舟.</span>}
           {rss && <a href={url('rss/feed.xml')} target='_blank' className='whitespace-nowrap'><IconRss className='inline align-[-3px] mr-1' />RSS订阅</a>}
-          {sitemap && <a href={url('sitemap-index.xml')} target='_blank' className='whitespace-nowrap'><IconSitemap className='inline align-[-3px] mr-1' />站点地图</a>}
+          {sitemap && <a href={url('sitemap-0.xml')} target='_blank' className='whitespace-nowrap'><IconSitemap className='inline align-[-3px] mr-1' />站点地图</a>}
         </div>
       </div>
     </footer>
