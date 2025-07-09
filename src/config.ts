@@ -190,9 +190,9 @@ const config: Config = {
     sitemap: true,
   },
   algolia: {
-    appId: "LNXGBV9VXP",
-    apiKey: "244e1376ee65f9b1f68643c4f40cb8ce",
-    indexName: "blog_xlenco_top_lnxgbv9vxp_pages",
+    appId: "ZXY6FZ9GDX",
+    apiKey: "7330b6a4ec2158ec77e003065a019c95",
+    indexName: "Blog",
   }
 }
 
